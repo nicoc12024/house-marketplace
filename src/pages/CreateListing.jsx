@@ -22,8 +22,6 @@ function CreateListing() {
     regularPrice: 0,
     discountedPrice: 0,
     images: {},
-    latitude: 0,
-    longitude: 0,
   });
 
   const {
@@ -38,8 +36,6 @@ function CreateListing() {
     regularPrice,
     discountedPrice,
     images,
-    latitude,
-    longitude,
   } = formData;
 
   const auth = getAuth();
@@ -134,9 +130,7 @@ function CreateListing() {
       timestamp: serverTimestamp(),
     };
 
-    formDataCopy.location = address;
     delete formDataCopy.images;
-    delete formDataCopy.address;
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
     const docRef = await addDoc(collection(db, "listings"), formDataCopy);
@@ -300,30 +294,6 @@ function CreateListing() {
             onChange={onMutate}
             required
           />
-          <div className="formLatLng ">
-            <div>
-              <label className="formLabel">Latitude</label>
-              <input
-                className="formInputSmall"
-                type="number"
-                id="latitude"
-                value={latitude}
-                onChange={onMutate}
-                required
-              />
-            </div>
-            <div>
-              <label className="formLabel">Longitude</label>
-              <input
-                className="formInputSmall"
-                type="number"
-                id="longitude"
-                value={longitude}
-                onChange={onMutate}
-                required
-              />
-            </div>
-          </div>
 
           <label className="formLabel">Offer</label>
           <div className="formButtons">

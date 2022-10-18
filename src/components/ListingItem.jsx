@@ -7,7 +7,7 @@ import { formatMoney } from "../helpers/formatMoney";
 function ListingItem({ listing, id, onDelete }) {
   const {
     name,
-    imageUrls,
+    imgUrls,
     location,
     discountedPrice,
     regularPrice,
@@ -17,10 +17,12 @@ function ListingItem({ listing, id, onDelete }) {
     offer,
   } = listing;
 
+  console.log(listing);
+
   return (
     <li className="categoryListing">
       <Link to={`/category/${type}/${id}`} className="categoryListingLink">
-        <img src={imageUrls[0]} alt={name} className="categoryListingImg" />
+        <img src={imgUrls[0]} alt={name} className="categoryListingImg" />
         <div className="categoryListingDetails">
           <p className="categoryListingLocation">{location}</p>
           <p className="categoryListingName">{name}</p>
