@@ -17,8 +17,6 @@ function ListingItem({ listing, id, onDelete }) {
     offer,
   } = listing;
 
-  console.log(listing);
-
   return (
     <li className="categoryListing">
       <Link to={`/category/${type}/${id}`} className="categoryListingLink">
