@@ -12,7 +12,7 @@ The first thing you see is the carrousel with the latest 5 listings added. Down 
 
 On Offers you can:
 
-- see the listings that are offers.
+- see the listings that are offered.
 - click on them and see the details of the offer.
 
 On Profile you can:
