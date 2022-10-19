@@ -17,21 +17,29 @@ import ListingItem from "../components/ListingItem";
 function Category() {
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [lastFetchedListing, setLastFetchedListing] = useState(null);
 
-  const { categoryName } = useParams();
+  const params = useParams();
 
   useEffect(() => {
     const fetchListings = async () => {
       try {
+        // Get reference
         const listingsRef = collection(db, "listings");
+
+        // Create a query
         const q = query(
           listingsRef,
-          where("type", "==", categoryName),
+          where("type", "==", params.categoryName),
           orderBy("timestamp", "desc"),
-          limit(10)
+          limit(2)
         );
 
+        // Execute query
         const querySnap = await getDocs(q);
+
+        const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+        setLastFetchedListing(lastVisible);
 
         const listings = [];
 
@@ -48,14 +56,52 @@ function Category() {
         toast.error("Could not fetch listings");
       }
     };
+
     fetchListings();
-  }, [categoryName]);
+  }, [params.categoryName]);
+
+  // Pagination / Load More
+  const onFetchMoreListings = async () => {
+    try {
+      // Get reference
+      const listingsRef = collection(db, "listings");
+
+      // Create a query
+      const q = query(
+        listingsRef,
+        where("type", "==", params.categoryName),
+        orderBy("timestamp", "desc"),
+        startAfter(lastFetchedListing),
+        limit(10)
+      );
+
+      // Execute query
+      const querySnap = await getDocs(q);
+
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+      setLastFetchedListing(lastVisible);
+
+      const listings = [];
+
+      querySnap.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        });
+      });
+
+      setListings((prevState) => [...prevState, ...listings]);
+      setLoading(false);
+    } catch (error) {
+      toast.error("Could not fetch listings");
+    }
+  };
 
   return (
     <div className="category">
       <header>
         <p className="pageHeader">
-          {categoryName === "rent" ? "Places for rent" : "Places for sale"}
+          {params.categoryName === "rent" ? "Places for rent" : "Places for sale"}
         </p>
       </header>
 
@@ -70,9 +116,17 @@ function Category() {
               ))}
             </ul>
           </main>
+
+          <br />
+          <br />
+          {lastFetchedListing && (
+            <p className="loadMore" onClick={onFetchMoreListings}>
+              Load More
+            </p>
+          )}
         </>
       ) : (
-        <p>No listings for {categoryName}</p>
+        <p>No listings for {params.categoryName}</p>
       )}
     </div>
   );

@@ -397,6 +397,10 @@ button {
   margin-bottom: 10rem;
 }
 
+.listingsList {
+  padding: 0;
+}
+
 .categoryListings {
   padding: 0;
 }
