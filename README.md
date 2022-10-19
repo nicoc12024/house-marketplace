@@ -50,4 +50,4 @@ https://house-marketplace-woad-kappa.vercel.app/
 
 # Demo
 
-![image](https://github.com/nicoc12024/house-marketplace/blob/master/public/demoGif/demo.gif)
+![til](./public/demoGif/demo.gif)
