@@ -31,7 +31,7 @@ Open http://localhost:3000 to view it in your browser.
 
 - React
 - React-Router-DOM
-- Firebase (for backend: database, file storage and authentication )
+- Firebase (for backend: database, file storage and authentication)
 - React Toastify (pop up messages)
 - Swiper (carrousel)
 
