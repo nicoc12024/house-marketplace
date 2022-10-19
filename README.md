@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# House Marketplace React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project It's a marketplace where people can come and register their account so they can list their home or apartment for rent or for sale. People can register their account using an email or with a Google Account. They can also change their username and reset password.
 
-## Available Scripts
+# Design and Layout
 
-In the project directory, you can run:
+This project was built for mobile first design. You can also use it on a desktop as well.
 
-### `npm start`
+# Explore Page (main)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The first thing you see is the carrousel with the latest 5 listings added. Down below there are 2 card categories called "Places for rent" and "Places for sale". Each listing has its own description and it's also possible to contact the landlord. Below that you can see the footer which is always visible. The footer has 3 buttons: Explore, Offers and Profile.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+On Offers you can:
 
-### `npm test`
+- see the listings that are offers.
+- click on them and see the details of the offer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+On Profile you can:
 
-### `npm run build`
+- can change username.
+- link to sell or rent a home.
+- see all of your listings and also you can edit or delete them.
+- logout
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After cloning the repository you should install the application by typing in the terminal "npm install react-app" and then "npm start".
+Open http://localhost:3000 to view it in your browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Dependencies
 
-### `npm run eject`
+- React
+- React-Router-DOM
+- Firebase (for backend: database, file storage and authentication )
+- React Toastify (pop up messages)
+- Swiper (carrousel)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Hooks
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- customHook (react)
+- useNavigate (react-router-com)
+- useState (react)
+- useEffect (react)
+- useParams (react-router-dom)
+- useSearchParams (react-router-dom)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Deploy
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://house-marketplace-woad-kappa.vercel.app/
 
-## Learn More
+# Demo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![image](https://github.com/nicoc12024/house-marketplace/blob/master/public/demoGif/demo.gif)

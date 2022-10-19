@@ -94,6 +94,10 @@ button {
 .explore {
   margin: 1rem;
 }
+
+.explore {
+  padding-bottom: 5rem;
+}
 @media (min-width: 1024px) {
   .pageContainer,
   .offers,
@@ -709,10 +713,6 @@ button {
 .listingText {
   margin-top: 3rem;
   font-weight: 600;
-}
-
-.lisitingsList {
-  padding: 0;
 }
 
 .formLabel {
