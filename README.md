@@ -4,7 +4,7 @@ This project It's a marketplace where people can come and register their account
 
 # Design and Layout
 
-This project was built for mobile first design. You can also use it on a desktop as well.
+This project was built for mobile first design.
 
 # Explore Page (main)
 
